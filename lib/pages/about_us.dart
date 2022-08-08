@@ -28,7 +28,7 @@ class AboutUs extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Icon(Icons.account_circle, size: 200),
+                    child: Icon(Icons.account_circle, size: 32),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
@@ -47,7 +47,7 @@ class AboutUs extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Icon(Icons.account_circle, size: 200),
+                    child: Icon(Icons.account_circle, size: 32),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
@@ -66,7 +66,7 @@ class AboutUs extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Icon(Icons.account_circle, size: 200),
+                    child: Icon(Icons.account_circle, size: 32),
                   ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
