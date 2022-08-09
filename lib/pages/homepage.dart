@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/hp_details.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: (){
                   Navigator.push(
                     context, MaterialPageRoute(builder: (context) =>
-                  AboutUs())
+                  HPDetails())
                   );
                 },
                 child: Text("Test"))
