@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/hp_details.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -13,21 +14,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Harry potter Almanac'),),
+        title: Text('Harry Potter App'),
+      ),
       body: Center(
         child: Column(
-          children: [
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) =>
-                  AboutUs())
-                  );
-                },
-                child: Text("Test"))
-          ],
-        ),
-      )
+            mainAxisAlignment: MainAxisAlignment.start,
+            children:[
+              Text(
+                'Welcome to Harry Potter wizardly app',
+                style: TextStyle(color: Colors.red, fontSize: 23.0, fontFamily: 'Akaya Telivigala'),
+              ),
+            ]),
+      ),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 
-import '../models/harrypotter_model.dart';
+import '../models/hp_model.dart';
 
-class HarryPotterService {
+class HPService {
   Future<HpCharacters> fetchHPInformation() async {
     final Uri url = Uri(
       scheme: 'https',
