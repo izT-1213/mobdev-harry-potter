@@ -14,21 +14,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Harry potter Almanac'),),
+        title: Text('Harry Potter App'),
+      ),
       body: Center(
         child: Column(
-          children: [
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) =>
-                  HPDetails())
-                  );
-                },
-                child: Text("Test"))
-          ],
-        ),
-      )
+            mainAxisAlignment: MainAxisAlignment.start,
+            children:[
+              Text(
+                'Welcome to Harry Potter wizardly app',
+                style: TextStyle(color: Colors.red, fontSize: 23.0, fontFamily: 'Akaya Telivigala'),
+              ),
+            ]),
+      ),
     );
   }
 }
