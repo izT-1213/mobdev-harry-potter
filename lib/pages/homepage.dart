@@ -24,6 +24,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Welcome to Harry Potter wizardly app',
                 style: TextStyle(color: Colors.red, fontSize: 23.0, fontFamily: 'Akaya Telivigala'),
               ),
+              ElevatedButton(onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> HPDetails())
+                );
+              },
+                  child: Text("test"))
             ]),
       ),
     );
