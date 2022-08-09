@@ -9,17 +9,16 @@ class HPInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index){
-            return Container(
-              child: Text(hpCharacters.runtimeType.toString()),
-            );
-          },
-      ),]
-    );
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      ListView.builder(
+        shrinkWrap: true,
+        itemCount: hpCharacters.length,
+        itemBuilder: (context, index) {
+          return Container(
+            child: Text(hpCharacters.runtimeType.toString()),
+          );
+        },
+      ),
+    ]);
   }
 }

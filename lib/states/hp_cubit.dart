@@ -13,6 +13,7 @@ class HPCubit extends Cubit<HPState>{
 
     try{
       HPCharacters hpCharacters = await harryPotterService.fetchHPInformation();
+      List<HpCharacters> hpCharacters = (await harryPotterService.fetchHPInformation()) as List<HpCharacters>;
       emit(
       HPLoaded(hpCharacters: hpCharacters),
       );
