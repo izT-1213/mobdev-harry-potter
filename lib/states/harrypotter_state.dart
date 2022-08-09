@@ -5,7 +5,7 @@ abstract class HarryPotterState {}
 class HarryPotterLoading extends HarryPotterState {}
 
 class HarryPotterLoaded extends HarryPotterState {
-  final HpCharacters hpCharacters;
+  List<HpCharacters> hpCharacters;
 
   HarryPotterLoaded({required this.hpCharacters});
 }

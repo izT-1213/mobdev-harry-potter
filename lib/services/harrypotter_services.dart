@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../models/hp_model.dart';
+import '../models/harrypotter_model.dart';
 
-class HPService {
+class HarryPotterService {
   Future<List<HpCharacters>> fetchHPInformation() async {
     var client = http.Client();
 

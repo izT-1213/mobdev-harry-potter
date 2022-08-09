@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../models/hp_model.dart';
+import '../models/harrypotter_model.dart';
 
 class HPInformation extends StatelessWidget {
   HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
 
-  List<HPCharacters> hpCharacters;
+  List<HpCharacters> hpCharacters;
 
   @override
   Widget build(BuildContext context) {
