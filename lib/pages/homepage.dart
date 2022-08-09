@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/hp_details.dart';
 
+import 'bottom_navbar.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -26,6 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ]),
       ),
+       bottomNavigationBar: Navbar(isHome: true, isAboutUs: false,),
     );
   }
 }
