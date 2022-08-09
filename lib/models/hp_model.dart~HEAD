@@ -23,19 +23,17 @@ class HpCharacters {
   final String image;
   final String description;
 
-  factory HpCharacters.fromJson(String str) =>
-      HpCharacters.fromMap(json.decode(str));
+  factory HpCharacters.fromJson(str) => HpCharacters.fromMap(json.decode(str));
 
   factory HpCharacters.fromMap(Map<String, dynamic> json) => HpCharacters(
-        name: json["name"],
-        alternateNames:
-            List<String>.from(json["alternate_names"].map((x) => x)),
-        species: json["species"],
-        house: json['house'],
-        wizard: json["wizard"],
-        hogwartsStudent: json["hogwartsStudent"],
-        hogwartsStaff: json["hogwartsStaff"],
-        image: json["image"],
-        description: json["description"] == null ? null : json["description"],
-      );
+    name: json["name"],
+    alternateNames: List<String>.from(json["alternate_names"].map((x) => x)),
+    species: json["species"],
+    house: json['house'],
+    wizard: json["wizard"],
+    hogwartsStudent: json["hogwartsStudent"],
+    hogwartsStaff: json["hogwartsStaff"],
+    image: json["image"],
+    description: json["description"]??"",
+  );
 }
