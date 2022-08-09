@@ -19,22 +19,23 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Harry Potter App'),
       ),
       body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children:[
-              Text(
-                'Welcome to Harry Potter wizardly app',
-                style: TextStyle(color: Colors.red, fontSize: 23.0, fontFamily: 'Akaya Telivigala'),
-              ),
-              ElevatedButton(onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context)=> HPDetails())
-                );
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          const Text(
+            'Welcome to Harry Potter wizardly app',
+            style: TextStyle(
+                color: Colors.red,
+                fontSize: 23.0,
+                fontFamily: 'Akaya Telivigala'),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HPDetails()));
               },
-                  child: Text("test"))
-            ]),
+              child: const Text("test"))
+        ]),
       ),
+      bottomNavigationBar: Navbar(isHome: true, isAboutUs: false,),
     );
   }
 }

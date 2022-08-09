@@ -13,6 +13,7 @@ class HPInformation extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ListView.builder(
+          shrinkWrap: true,
           itemCount: hpCharacters.length,
           itemBuilder: (context, index){
             return Container(
