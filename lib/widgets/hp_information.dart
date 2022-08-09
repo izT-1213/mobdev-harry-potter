@@ -3,19 +3,23 @@ import 'package:flutter/material.dart';
 import '../models/hp_model.dart';
 
 class HPInformation extends StatelessWidget {
-  const HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
+  HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
 
-  final HpCharacters hpCharacters;
+  final List<HpCharacters> hpCharacters;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("HP Information Test"),
-      ),
-      body: Center(
-        child: Text(hpCharacters.name[1]),
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ListView.builder(
+          itemCount: hpCharacters.length,
+          itemBuilder: (context, index){
+            return Container(
+              child: Text('Entry ${hpCharacters[index].name}'),
+            );
+          },
+      ),]
     );
   }
 }
