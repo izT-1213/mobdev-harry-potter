@@ -5,7 +5,7 @@ import '../models/hp_model.dart';
 class HPInformation extends StatelessWidget {
   HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
 
-  final List<HpCharacters> hpCharacters;
+  List<HPCharacters> hpCharacters;
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +13,10 @@ class HPInformation extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ListView.builder(
-          itemCount: hpCharacters.length,
+          itemCount: 10,
           itemBuilder: (context, index){
             return Container(
-              child: Text('Entry ${hpCharacters[index].name}'),
+              child: Text(hpCharacters.runtimeType.toString()),
             );
           },
       ),]

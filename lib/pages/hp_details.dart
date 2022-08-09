@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:harry_potter_mobdev_hackathon/models/hp_model.dart';
-import 'package:harry_potter_mobdev_hackathon/services/hp_services.dart';
 import 'package:harry_potter_mobdev_hackathon/states/hp_cubit.dart';
 import 'package:harry_potter_mobdev_hackathon/states/hp_state.dart';
 import 'package:harry_potter_mobdev_hackathon/widgets/hp_information.dart';
@@ -25,7 +23,7 @@ class HPDetails extends StatelessWidget {
               return const CircularProgressIndicator();
             }
             if (state is HPLoaded){
-              return HPInformation(hpCharacters: state.hpCharacters);
+              return HPInformation(hpCharacters: [],);
             }
             
             return Text(

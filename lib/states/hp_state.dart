@@ -5,7 +5,7 @@ abstract class HPState{}
 class HPLoading extends HPState{}
 
 class HPLoaded extends HPState{
-  List<HpCharacters> hpCharacters;
+  final HPCharacters hpCharacters;
 
   HPLoaded({required this.hpCharacters});
 }
