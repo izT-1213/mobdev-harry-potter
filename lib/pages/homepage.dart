@@ -112,7 +112,12 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor'))
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.brown,
                           ),
@@ -151,7 +156,12 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'slytherin'))
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.brown,
                           ),
@@ -189,7 +199,12 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'hufflepuff'))
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.brown,
                           ),
@@ -226,14 +241,18 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'ravenclaw'))
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.brown,
                           ),
                           child: const Text('Visit Ravenclaw',
                             style: TextStyle(
                               color: Colors.white,
-                            ),),
                         ),
                       ],
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:harry_potter_mobdev_hackathon/fonts/akaya_teliviga.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/homepage.dart';
 
@@ -32,9 +33,7 @@ class Navbar extends StatelessWidget {
             style: isHome? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
             label: const Text(
               "Home",
-              style: TextStyle(
-                color: Colors.white,
-              ),
+              style: AkayaTelivigala(color: Colors.white, size: 16)
             ),
           ),
           TextButton.icon(
@@ -48,9 +47,7 @@ class Navbar extends StatelessWidget {
             style: isAboutUs? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
             label: const Text(
               "About Us",
-              style: TextStyle(
-                color: Colors.white,
-              ),
+              style: AkayaTelivigala(color: Colors.white, size: 16),
             ),
           ),
         ],

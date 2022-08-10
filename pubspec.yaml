@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
   flutter_bloc: ^8.0.1
+  transparent_image: ^2.0.0
+  cached_network_image: ^3.2.1
 
 dev_dependencies:
   flutter_test:
@@ -59,7 +61,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/waifu.jpeg
-    - assets/images/gigachad.jpeg
+    - assets/images/jazli.jpeg
     - assets/images/rn_tea.jpeg
     - assets/images/background.jpeg
     - assets/images/hufflepuff.png
