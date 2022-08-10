@@ -67,7 +67,7 @@ class AboutUs extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(8.0),
                         child: Image.asset(
-                          'assets/images/gigachad.jpeg',
+                          'assets/images/jazli.jpeg',
                           width: 100.0,
                           height: 100.0,
                         ),
