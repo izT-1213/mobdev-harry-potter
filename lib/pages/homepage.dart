@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/bottom_navbar.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/hp_details.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/hphouse_details.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -67,7 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor',)
+                          )
+                        );
+                        },
                         child: const Text('Visit Gryffindor'),
                       ),
                     ],
@@ -92,7 +99,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'slytherin')));
+                        },
                         child: const Text('Visit Slytherin'),
                       ),
                     ],
