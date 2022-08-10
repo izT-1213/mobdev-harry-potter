@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Harry Potter Almanac',
       theme: ThemeData(
         canvasColor: Colors.yellow,
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.brown,
       ),
       home: const MyHomePage(),
     );
