@@ -8,7 +8,6 @@ class HPInformation extends StatelessWidget {
   HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
 
   final List<HpCharacters> hpCharacters;
-  List<Profile> profile=[];
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -41,20 +40,19 @@ class HPInformation extends StatelessWidget {
                 ),
               ),
               onTap: (){
-                profile.add(Profile(
-                    hpCharacters[i].name,
-                    hpCharacters[i].alternateNames,
-                    hpCharacters[i].species,
-                    hpCharacters[i].house,
-                    hpCharacters[i].wizard,
-                    hpCharacters[i].hogwartsStudent,
-                    hpCharacters[i].hogwartsStaff,
-                    hpCharacters[i].image,
-                    hpCharacters[i].description
-                ));
                 Navigator.push(
                     context,
-                MaterialPageRoute(builder: (context) => CharacterProfile(hpCharacter: profile)));
+                MaterialPageRoute(builder: (context) => CharacterProfile(
+                    name: hpCharacters[i].name,
+                    alternateNames: hpCharacters[i].alternateNames,
+                    species: hpCharacters[i].species,
+                    house: hpCharacters[i].house,
+                    wizard: hpCharacters[i].wizard,
+                    hogwartsStudent: hpCharacters[i].hogwartsStudent,
+                    hogwartsStaff: hpCharacters[i].hogwartsStaff,
+                    image: hpCharacters[i].image,
+                    description: hpCharacters[i].description
+                )));
               },
             ),
               Positioned(child: Align(
@@ -74,28 +72,4 @@ class HPInformation extends StatelessWidget {
       ],
     )]);
   }
-}
-
-class Profile{
-  final String name;
-  final List<String> alternateNames;
-  final String species;
-  final String house;
-  final bool wizard;
-  final bool hogwartsStudent;
-  final bool hogwartsStaff;
-  final String image;
-  final String description;
-
-  Profile(
-      this.name,
-      this.alternateNames,
-      this.species,
-      this.house,
-      this.wizard,
-      this.hogwartsStudent,
-      this.hogwartsStaff,
-      this.image,
-      this.description);
-
 }

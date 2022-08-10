@@ -253,8 +253,8 @@ class _MyHomePageState extends State<MyHomePage>
                           child: const Text('Visit Ravenclaw',
                             style: TextStyle(
                               color: Colors.white,
-                        ),
-                      ],
+                        )))
+                          ],
                     ),
                   ]),
                 ],
