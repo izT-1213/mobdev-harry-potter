@@ -23,7 +23,7 @@ class HPDetails extends StatelessWidget {
               return const CircularProgressIndicator();
             }
             if (state is HarryPotterLoaded){
-              return HPInformation(hpCharacters: [],);
+              return HPInformation(hpCharacters: state.hpCharacters,);
             }
             
             return Text(
