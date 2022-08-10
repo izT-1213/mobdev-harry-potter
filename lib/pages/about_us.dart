@@ -87,7 +87,7 @@ class AboutUs extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: Navbar(),
+      bottomNavigationBar: Navbar(isHome: false, isAboutUs: true,),
     );
   }
 }

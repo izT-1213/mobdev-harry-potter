@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]),
       ),
-      bottomNavigationBar: Navbar(),
+      bottomNavigationBar: Navbar(isHome: true, isAboutUs: false,),
     );
   }
 }
