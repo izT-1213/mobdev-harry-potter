@@ -42,10 +42,11 @@ class _MyHomePageState extends State<MyHomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
           title: Text(
-        'Welcome to Harry Potter Wizardly App',
+        'Harry Potter Almanac',
         style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 25.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'AkayaTelivigala'),
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage>
             Text(
               'Welcome to Harry Potter Wizardly App',
               style: TextStyle(
-                  color: Colors.red,
+                  color: Colors.black,
                   fontSize: 23.0,
                   fontFamily: 'AkayaTelivigala'),
             ),
@@ -81,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage>
                   Text(
                     'Get to know to your favourite Harry Potter characters here in our app. See below & choose your favourite Harry Potter houses! ',
                     style: TextStyle(
-                        color: Colors.red,
+                        color: Colors.black,
                         fontSize: 18.0,
                         fontFamily: 'AkayaTelivigala'),
                   ),
@@ -117,7 +118,13 @@ class _MyHomePageState extends State<MyHomePage>
                               MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor'))
                             );
                           },
-                          child: const Text('Visit Gryffindor'),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.brown,
+                          ),
+                          child: const Text('Visit Gryffindor',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),),
                         ),
                       ],
                     ),
@@ -132,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 255),
+                            constraints: const BoxConstraints(maxWidth: 200),
                             child: FadeTransition(
                               opacity: _animationController,
                               child: const Image(
@@ -155,7 +162,13 @@ class _MyHomePageState extends State<MyHomePage>
                                 MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'slytherin'))
                             );
                           },
-                          child: const Text('Visit Slytherin'),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.brown,
+                          ),
+                          child: const Text('Visit Slytherin',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),),
                         ),
                       ],
                     ),
@@ -192,7 +205,13 @@ class _MyHomePageState extends State<MyHomePage>
                                 MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'hufflepuff'))
                             );
                           },
-                          child: const Text('Visit Hufflepuff'),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.brown,
+                          ),
+                          child: const Text('Visit Hufflepuff',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),),
                         ),
                       ],
                     ),
@@ -228,7 +247,12 @@ class _MyHomePageState extends State<MyHomePage>
                                 MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'ravenclaw'))
                             );
                           },
-                          child: const Text('Visit Ravenclaw'),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.brown,
+                          ),
+                          child: const Text('Visit Ravenclaw',
+                            style: TextStyle(
+                              color: Colors.white,
                         ),
                       ],
                     ),
