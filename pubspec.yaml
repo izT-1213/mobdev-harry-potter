@@ -59,7 +59,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - assets/images/waifu.jpeg
+    - assets/images/gigachad.jpeg
+    - assets/images/rn_tea.jpeg
+    - assets/images/background.jpeg
+    - assets/images/background.jpg
 
 
   # To add assets to your application, add an assets section, like this:
