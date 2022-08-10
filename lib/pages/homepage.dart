@@ -111,7 +111,12 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor'))
+                            );
+                          },
                           child: const Text('Visit Gryffindor'),
                         ),
                       ],
@@ -144,7 +149,12 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'slytherin'))
+                            );
+                          },
                           child: const Text('Visit Slytherin'),
                         ),
                       ],
@@ -176,7 +186,12 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'hufflepuff'))
+                            );
+                          },
                           child: const Text('Visit Hufflepuff'),
                         ),
                       ],
@@ -207,7 +222,12 @@ class _MyHomePageState extends State<MyHomePage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'ravenclaw'))
+                            );
+                          },
                           child: const Text('Visit Ravenclaw'),
                         ),
                       ],
