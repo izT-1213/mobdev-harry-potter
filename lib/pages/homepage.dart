@@ -53,16 +53,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 60.0,
                 ),
                 Wrap(children: [
-                  const Image(
-                    image: NetworkImage(
-                        'https://1000logos.net/wp-content/uploads/2021/11/Gryffindor-Logo.png'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 100),
+                          child: const Image(
+                            image: NetworkImage(
+                                'https://1000logos.net/wp-content/uploads/2021/11/Gryffindor-Logo.png'),
+                          )),
+                    ],
                   ),
-
                   const SizedBox(
                     width: 20.0,
                     height: 20.0,
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -72,22 +77,24 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
-
-                  const SizedBox(
-                    width: 60.0,
-                    height: 60.0,
-                  ),
-
-                  const Image(
-                    image: NetworkImage(
-                        'https://www.logolynx.com/images/logolynx/53/5390e974544de6279c4d9cb6253e3a2c.jpeg'),
-                  ),
-
+                ]),
+                const SizedBox(
+                  width: 60.0,
+                  height: 60.0,
+                ),
+                Wrap(children: [
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 100),
+                        child: const Image(
+                          image: NetworkImage(
+                              'https://www.logolynx.com/images/logolynx/53/5390e974544de6279c4d9cb6253e3a2c.jpeg'),
+                        )),
+                  ]),
                   const SizedBox(
                     width: 20.0,
                     height: 20.0,
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -97,8 +104,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
-
-
                 ]),
               ],
             ),
