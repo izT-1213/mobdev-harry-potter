@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Harry Potter Almanac',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.brown,
       ),
       home: const MyHomePage(),
     );
