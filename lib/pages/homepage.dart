@@ -9,16 +9,41 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
   final items = ['House 1' 'House 2' 'House 3' 'House 4'];
+  late AnimationController _animationController;
 
   String? value;
 
   @override
+  void initState() {
+    super.initState();
+    _animationController=AnimationController(vsync: this,duration: const Duration(seconds: 1));
+  }
+
+@override
+  void didChangeDependencies() {
+     super.didChangeDependencies();
+     _animationController.forward(from: 0);
+  }
+
+  @override
+  void dispose() {
+     super.dispose();
+     _animationController.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Harry Potter Almanac'),
+        title: Text(
+          'Welcome to Harry Potter Wizardly App',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'AkayaTelivigala'),
+        )
       ),
       body: SingleChildScrollView(
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -31,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             style: TextStyle(
                 color: Colors.red,
                 fontSize: 23.0,
-                fontFamily: 'Akaya Telivigala'),
+                fontFamily: 'AkayaTelivigala'),
           ),
           const SizedBox(
             width: 20.0,
@@ -46,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(
                       color: Colors.red,
                       fontSize: 18.0,
-                      fontFamily: 'Akaya Telivigala'),
+                      fontFamily: 'AkayaTelivigala'),
                 ),
                 const SizedBox(
                   width: 60.0,
@@ -57,10 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 100),
-                          child: const Image(
-                            image: NetworkImage(
-                                'https://1000logos.net/wp-content/uploads/2021/11/Gryffindor-Logo.png'),
+                          constraints: const BoxConstraints(maxWidth: 350),
+                          child: FadeTransition(opacity: _animationController,
+                            child:
+                            const Image(image:AssetImage('assets/Gryffindor-Logo-removebg-preview.png')),
                           )),
                     ],
                   ),
@@ -85,10 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 Wrap(children: [
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 100),
+                        constraints: const BoxConstraints(maxWidth: 350),
                         child: const Image(
                           image: NetworkImage(
-                              'https://www.logolynx.com/images/logolynx/53/5390e974544de6279c4d9cb6253e3a2c.jpeg'),
+                              'https://logos-world.net/wp-content/uploads/2022/02/Slytherin-Symbol.png'),
                         )),
                   ]),
                   const SizedBox(
@@ -101,6 +126,71 @@ class _MyHomePageState extends State<MyHomePage> {
                       ElevatedButton(
                         onPressed: () {},
                         child: const Text('Visit Slytherin'),
+                      ),
+                    ],
+                  ),
+                ]),
+
+                const SizedBox(
+                  width: 60.0,
+                  height: 60.0,
+                ),
+
+                Wrap(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 255),
+                          child: FadeTransition(opacity: _animationController,
+                            child:
+                            const Image(image:AssetImage('assets/hufflepuff-removebg-preview.png')),
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Visit Hufflepuff'),
+                      ),
+                    ],
+                  ),
+                ]),
+
+                const SizedBox(
+                  width: 60.0,
+                  height: 60.0,
+                ),
+
+                Wrap(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 255),
+                          child: FadeTransition(opacity: _animationController,
+                            child:
+                            const Image(image:AssetImage('assets/ravenclaw_logo_-removebg-preview.png')),
+                          )),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Visit Ravenclaw'
+                            ),
                       ),
                     ],
                   ),
