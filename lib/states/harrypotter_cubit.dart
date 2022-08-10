@@ -12,7 +12,22 @@ class HarryPotterCubit extends Cubit<HarryPotterState> {
     emit(HarryPotterLoading());
 
     try {
-      List<HpCharacters> hpCharacters = await harryPotterService.fetchHPInformation();
+      List<HpCharacters> hpCharacters = await (harryPotterService.fetchHPInformation()) as List<HpCharacters>;
+      emit(
+        HarryPotterLoaded(hpCharacters: hpCharacters),
+      );
+    } catch (e) {
+      emit(HarryPotterError(errorMessage: e.toString()));
+    }
+  }
+
+  Future<void> fetchHPHouse(String house) async {
+    HarryPotterService harryPotterService = HarryPotterService();
+
+    emit(HarryPotterLoading());
+
+    try {
+      List<HpCharacters> hpCharacters = await (harryPotterService.fetchHPHouse(house)) as List<HpCharacters>;
       emit(
         HarryPotterLoaded(hpCharacters: hpCharacters),
       );
