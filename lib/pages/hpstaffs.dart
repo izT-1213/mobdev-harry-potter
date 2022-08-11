@@ -20,7 +20,7 @@ class HPStaffs extends StatelessWidget {
           title: const Text(
             "Staff",
             style: AkayaTelivigala(
-                color: Colors.black, size: 25, fontWeight: FontWeight.bold),
+                color: Colors.white, size: 25),
           ),
         ),
         body: Container(

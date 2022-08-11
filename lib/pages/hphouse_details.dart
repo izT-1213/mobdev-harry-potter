@@ -20,14 +20,14 @@ class HPHouseDetails extends StatelessWidget {
         appBar: AppBar(
           title: Text( "${house[0].toUpperCase()}${house.substring(1, house.length)}",
             style: const AkayaTelivigala(
-                color: Colors.black, size: 25, fontWeight: FontWeight.bold),
+                color: Colors.white, size: 25),
           ),
         ),
         body: Container(
           constraints: BoxConstraints.expand(),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/background.jpeg"),
+                image: AssetImage("assets/images/${house}_bg.png"),
                 fit: BoxFit.cover),
           ),
           child: Center(

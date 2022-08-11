@@ -21,7 +21,7 @@ class HPStudents extends StatelessWidget {
           title: const Text(
             "Student",
             style: AkayaTelivigala(
-                color: Colors.black, size: 25, fontWeight: FontWeight.bold),
+                color: Colors.white, size: 25),
           ),
         ),
         body: Container(
