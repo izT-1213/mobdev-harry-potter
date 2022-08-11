@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage>
     return Scaffold(
       appBar: AppBar(
 
-          title: Text(
+          title: const Text(
         'Harry Potter Almanac',
         style: TextStyle(
             color: Colors.black,
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage>
               width: 20.0,
               height: 30.0,
             ),
-            Text(
+            const Text(
               'Welcome to Harry Potter Wizardly App',
               style: TextStyle(
                   color: Colors.black,
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage>
               padding: EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'Get to know to your favourite Harry Potter characters here in our app. See below & choose your favourite Harry Potter houses! ',
                     style: TextStyle(
                         color: Colors.black,
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage>
                             constraints: const BoxConstraints(maxWidth: 350),
                             child: FadeTransition(
                               opacity: _animationController,
-                              child: Image(
+                              child: const Image(
                                   image: AssetImage(
                                       'assets/images/gryffindor.png')),
                             )),
@@ -265,7 +265,6 @@ class _MyHomePageState extends State<MyHomePage>
       ),
       bottomNavigationBar: Navbar(
         isHome: true,
-        isAboutUs: false,
       ),
     );
   }
