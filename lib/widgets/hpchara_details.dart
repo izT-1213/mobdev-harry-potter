@@ -57,9 +57,12 @@ class CharacterProfile extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Row(
                       children: [
-                        const Text("House :", style: TextStyle(
-                          fontSize: 18,
-                            fontWeight: FontWeight.bold),),
+                        const SizedBox(
+                           width: 100,
+                          child: Text("House", style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),),),
+                        const Text(":", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
                         const SizedBox(width: 25,),
                         Text(house, style: const TextStyle(
                           fontSize: 18
@@ -72,9 +75,12 @@ class CharacterProfile extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Row(
                       children: [
-                        const Text("Species :", style: TextStyle(
+                        const SizedBox(
+                          width: 100,
+                          child: Text("Species", style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.bold),),
+                            fontWeight: FontWeight.bold),),),
+                        const Text(":", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
                         const SizedBox(width: 25,),
                         Text(species, style: const TextStyle(
                             fontSize: 18
@@ -82,7 +88,19 @@ class CharacterProfile extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Text(description),
+                  const SizedBox(height: 8,),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      children: const [
+                        SizedBox(
+                          width: 100,
+                          child: Text("Description", style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),),),
+                        Text(":", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)])),
+                  const SizedBox(height: 8,),
+                  Text(description, style: TextStyle(fontSize: 16), textAlign: TextAlign.justify,),
             ],
             )
             ),
