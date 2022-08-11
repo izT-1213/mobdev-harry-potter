@@ -59,26 +59,26 @@ class CharacterProfile extends StatelessWidget {
                   ),
                   const SizedBox(height: 15,),
                   Text(name,
-                      style: const AkayaTelivigala(fontWeight: FontWeight.bold, size: 25, color: Colors.black),
+                      style: AkayaTelivigala(fontWeight: FontWeight.bold, size: 25, color: Colors.brown.shade900),
                       textAlign: TextAlign.left,),
                   const SizedBox(height: 15,),
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Row(
                       children: [
-                        house.isNotEmpty ? const SizedBox(
+                        house.isNotEmpty ? SizedBox(
                            width: 100,
                           child: Text("House", style: AkayaTelivigala(
                             size: 20,
-                            fontWeight: FontWeight.bold, color: Colors.black),),)
+                            fontWeight: FontWeight.bold, color: Colors.brown.shade900)))
                         : const SizedBox( width: 100,),
-                        house.isNotEmpty ? const Text(":", style: AkayaTelivigala(size: 18, fontWeight: FontWeight.bold, color: Colors.black),)
+                        house.isNotEmpty ? Text(":", style: AkayaTelivigala(size: 18, fontWeight: FontWeight.bold, color: Colors.brown.shade900))
                         : const SizedBox(width: 100,),
                         const SizedBox(width: 25,),
-                        house.isNotEmpty ? Text(house, style: const AkayaTelivigala(
+                        house.isNotEmpty ? Text(house, style: AkayaTelivigala(
                           size: 20,
-                          color: Colors.black
-                        ),)
+                          color: Colors.brown.shade900),
+                        )
                             : const SizedBox(width: 50,),
                       ]
                     ),
@@ -88,18 +88,18 @@ class CharacterProfile extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 100,
                           child: Text("Species", style: AkayaTelivigala(
                             size: 20,
                             fontWeight: FontWeight.bold,
-                          color: Colors.black),),),
+                          color: Colors.brown.shade900),),),
                         const Text(":", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                         const SizedBox(width: 25,),
-                        Text(species, style: const AkayaTelivigala(
+                        Text(species, style: AkayaTelivigala(
                             size: 20,
-                          color: Colors.black
-                        ),),
+                          color: Colors.brown.shade900),
+                        ),
                       ],
                     ),
                   ),
@@ -107,16 +107,23 @@ class CharacterProfile extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Row(
-                      children: const [
+                      children: [
                         SizedBox(
                           width: 100,
                           child: Text("Description", style: AkayaTelivigala(
                             size: 20,
                             fontWeight: FontWeight.bold,
-                          color: Colors.black),),),
-                        Text(":", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)])),
+                          color: Colors.brown.shade900),),),
+                        Text(":", style: AkayaTelivigala(size: 20, fontWeight: FontWeight.bold, color: Colors.brown.shade900),)])),
                   const SizedBox(height: 8,),
-                  Text(description, style: const AkayaTelivigala(size: 17, color: Colors.black), textAlign: TextAlign.justify,),
+                  Scrollbar(child:
+                    Container(
+                      height: 300,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Text(description,
+                          style: AkayaTelivigala(size: 17, color: Colors.brown.shade900),
+                          textAlign: TextAlign.justify,)))),
             ],
             )
             ),
