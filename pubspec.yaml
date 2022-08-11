@@ -68,6 +68,10 @@ flutter:
     - assets/images/gryffindor.png
     - assets/images/slytherin.png
     - assets/images/ravenclaw.png
+    - assets/images/Gryffindor-black.png
+    - assets/images/Slytherin-black.png
+    - assets/images/Hufflepuff-black.png
+    - assets/images/Ravenclaw-black.png
     - assets/images/slytherin_bg.png
     - assets/images/gryffindor_bg.png
     - assets/images/hufflepuff_bg.png
