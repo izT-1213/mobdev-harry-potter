@@ -6,21 +6,6 @@ import 'package:harry_potter_mobdev_hackathon/states/harrypotter_state.dart';
 class HarryPotterCubit extends Cubit<HarryPotterState> {
   HarryPotterCubit() : super(HarryPotterLoading());
 
-  Future<void> fetchHP() async {
-    HarryPotterService harryPotterService = HarryPotterService();
-
-    emit(HarryPotterLoading());
-
-    try {
-      List<HpCharacters> hpCharacters = await (harryPotterService.fetchHPInformation()) as List<HpCharacters>;
-      emit(
-        HarryPotterLoaded(hpCharacters: hpCharacters),
-      );
-    } catch (e) {
-      emit(HarryPotterError(errorMessage: e.toString()));
-    }
-  }
-
   Future<void> fetchHPHouse(String house) async {
     HarryPotterService harryPotterService = HarryPotterService();
 

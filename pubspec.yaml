@@ -64,20 +64,15 @@ flutter:
     - assets/images/jazli.jpeg
     - assets/images/rn_tea.jpeg
     - assets/images/background.jpeg
-    - assets/images/hufflepuff.png
-    - assets/images/gryffindor.png
-    - assets/images/slytherin.png
-    - assets/images/ravenclaw.png
-    - assets/images/Gryffindor-black.png
-    - assets/images/Slytherin-black.png
-    - assets/images/Hufflepuff-black.png
-    - assets/images/Ravenclaw-black.png
     - assets/images/slytherin_bg.png
     - assets/images/gryffindor_bg.png
     - assets/images/hufflepuff_bg.png
     - assets/images/ravenclaw_bg.png
     - assets/images/harry_potter.png
-    - assets/images/gryff_owner.png
+    - assets/images/gryffindor_owner.png
+    - assets/images/slytherin_owner.png
+    - assets/images/hufflepuff_owner.png
+    - assets/images/ravenclaw_owner.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
