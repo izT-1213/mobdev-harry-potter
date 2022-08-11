@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:harry_potter_mobdev_hackathon/fonts/akaya_teliviga.dart';
 
 class CharacterProfile extends StatelessWidget {
 
@@ -6,9 +8,6 @@ class CharacterProfile extends StatelessWidget {
   final List<String> alternateNames;
   final String species;
   final String house;
-  final bool wizard;
-  final bool hogwartsStudent;
-  final bool hogwartsStaff;
   final String image;
   final String description;
 
@@ -18,9 +17,6 @@ class CharacterProfile extends StatelessWidget {
     required this.alternateNames,
     required this.species,
     required this.house,
-    required this.wizard,
-    required this.hogwartsStudent,
-    required this.hogwartsStaff,
     required this.image,
     required this.description}) : super(key: key);
 
@@ -28,10 +24,10 @@ class CharacterProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(name),
+        title: Text(name, style: const AkayaTelivigala(color: Colors.white, size: 25),),
       ),
       body: Container(
-        constraints: BoxConstraints.expand(),
+        constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/background.jpeg"),
@@ -43,30 +39,47 @@ class CharacterProfile extends StatelessWidget {
                   Container(
                     height: 210,
                     width: 170,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      image: DecorationImage(
-                      image: NetworkImage(image),
-                      fit: BoxFit.cover))),
+                    child: Card(
+                      elevation: 10,
+                      color: Colors.transparent,
+                      child: ClipRRect (
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: image.isNotEmpty
+                            ? CachedNetworkImage(
+                              imageUrl: image,
+                              placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                          fit: BoxFit.cover,)
+                            : CachedNetworkImage(
+                          imageUrl:
+                          'https://www.seekpng.com/png/detail/966-9665317_placeholder-image-person-jpg.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
                   const SizedBox(height: 15,),
                   Text(name,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                      style: const AkayaTelivigala(fontWeight: FontWeight.bold, size: 25, color: Colors.black),
                       textAlign: TextAlign.left,),
                   const SizedBox(height: 15,),
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Row(
                       children: [
-                        const SizedBox(
+                        house.isNotEmpty ? const SizedBox(
                            width: 100,
-                          child: Text("House", style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),),),
-                        const Text(":", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                          child: Text("House", style: AkayaTelivigala(
+                            size: 20,
+                            fontWeight: FontWeight.bold, color: Colors.black),),)
+                        : const SizedBox( width: 100,),
+                        house.isNotEmpty ? const Text(":", style: AkayaTelivigala(size: 18, fontWeight: FontWeight.bold, color: Colors.black),)
+                        : const SizedBox(width: 100,),
                         const SizedBox(width: 25,),
-                        Text(house, style: const TextStyle(
-                          fontSize: 18
-                        ),),
+                        house.isNotEmpty ? Text(house, style: const AkayaTelivigala(
+                          size: 20,
+                          color: Colors.black
+                        ),)
+                            : const SizedBox(width: 50,),
                       ]
                     ),
                     ),
@@ -77,13 +90,15 @@ class CharacterProfile extends StatelessWidget {
                       children: [
                         const SizedBox(
                           width: 100,
-                          child: Text("Species", style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),),),
-                        const Text(":", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                          child: Text("Species", style: AkayaTelivigala(
+                            size: 20,
+                            fontWeight: FontWeight.bold,
+                          color: Colors.black),),),
+                        const Text(":", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                         const SizedBox(width: 25,),
-                        Text(species, style: const TextStyle(
-                            fontSize: 18
+                        Text(species, style: const AkayaTelivigala(
+                            size: 20,
+                          color: Colors.black
                         ),),
                       ],
                     ),
@@ -95,12 +110,13 @@ class CharacterProfile extends StatelessWidget {
                       children: const [
                         SizedBox(
                           width: 100,
-                          child: Text("Description", style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),),),
-                        Text(":", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)])),
+                          child: Text("Description", style: AkayaTelivigala(
+                            size: 20,
+                            fontWeight: FontWeight.bold,
+                          color: Colors.black),),),
+                        Text(":", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)])),
                   const SizedBox(height: 8,),
-                  Text(description, style: TextStyle(fontSize: 16), textAlign: TextAlign.justify,),
+                  Text(description, style: const AkayaTelivigala(size: 17, color: Colors.black), textAlign: TextAlign.justify,),
             ],
             )
             ),

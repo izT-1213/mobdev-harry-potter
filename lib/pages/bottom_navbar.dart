@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:harry_potter_mobdev_hackathon/fonts/akaya_teliviga.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/homepage.dart';
-import 'package:harry_potter_mobdev_hackathon/pages/staff.dart';
-import 'package:harry_potter_mobdev_hackathon/pages/students.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/hpstaffs.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/hpstudents.dart';
 
 // This class is for bottom navigation widget in all pages - just call bottomNavigationBar: Navbar() under Scaffold
 class Navbar extends StatelessWidget {
@@ -50,7 +50,7 @@ class Navbar extends StatelessWidget {
             onPressed: isStudent? null: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Student()),
+                MaterialPageRoute(builder: (context) => const HPStudents()),
               );
             },
             icon: const Icon(
@@ -67,7 +67,7 @@ class Navbar extends StatelessWidget {
             onPressed: isStaff? null: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Staff()),
+                MaterialPageRoute(builder: (context) => const HPStaffs()),
               );
             },
             icon: const Icon(

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:harry_potter_mobdev_hackathon/fonts/akaya_teliviga.dart';
 import 'package:harry_potter_mobdev_hackathon/widgets/hpchara_details.dart';
 
 import '../models/harrypotter_model.dart';
 
 class HPInformation extends StatelessWidget {
-  HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
+  const HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
 
   final List<HpCharacters> hpCharacters;
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -30,7 +32,7 @@ class HPInformation extends StatelessWidget {
                   child: hpCharacters[i].image.isNotEmpty
                       ? CachedNetworkImage(
                     imageUrl: hpCharacters[i].image,
-                        placeholder: (context, url) => CircularProgressIndicator(),
+                        placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
                     fit: BoxFit.cover,)
                       : CachedNetworkImage(
                     imageUrl:
@@ -47,9 +49,6 @@ class HPInformation extends StatelessWidget {
                     alternateNames: hpCharacters[i].alternateNames,
                     species: hpCharacters[i].species,
                     house: hpCharacters[i].house,
-                    wizard: hpCharacters[i].wizard,
-                    hogwartsStudent: hpCharacters[i].hogwartsStudent,
-                    hogwartsStaff: hpCharacters[i].hogwartsStaff,
                     image: hpCharacters[i].image,
                     description: hpCharacters[i].description
                 )));
@@ -58,14 +57,14 @@ class HPInformation extends StatelessWidget {
               Positioned(child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(hpCharacters[i].name, style: hpCharacters[i].image.isNotEmpty?
-                    const TextStyle(color: Colors.white, fontSize: 18, shadows: <Shadow>[
+                    const AkayaTelivigala(color: Colors.white, shadows: <Shadow>[
                       Shadow(
                         offset: Offset(1.0, 1.0),
                         blurRadius: 3.0,
                         color: Color.fromARGB(255, 0, 0, 0),
                       ),
-                    ],)
-                      :const TextStyle(color: Colors.black, fontSize: 18,
+                    ], size: 20,)
+                      :const AkayaTelivigala(color: Colors.black, size: 20,
                   ),)
               )
               )
