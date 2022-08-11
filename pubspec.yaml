@@ -76,6 +76,8 @@ flutter:
     - assets/images/gryffindor_bg.png
     - assets/images/hufflepuff_bg.png
     - assets/images/ravenclaw_bg.png
+    - assets/images/harry_potter.png
+    - assets/images/gryff_owner.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

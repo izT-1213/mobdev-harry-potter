@@ -38,8 +38,8 @@ class _AboutUsState extends State<AboutUs> {
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Nurul Izzati',
                 style: AkayaTelivigala(
                   color: Colors.red,
@@ -68,8 +68,8 @@ class _AboutUsState extends State<AboutUs> {
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Jazli',
                 style: AkayaTelivigala(
                   color: Colors.red,
@@ -78,7 +78,7 @@ class _AboutUsState extends State<AboutUs> {
               ),
               Text('Code Logistics',
                   style: AkayaTelivigala(
-                    color: Colors.black,
+                    color: Colors.brown.shade900,
                     size: 24,
                   )),
             ],
@@ -97,8 +97,8 @@ class _AboutUsState extends State<AboutUs> {
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Isaiah Tan',
                 style: AkayaTelivigala(
                   color: Colors.red,

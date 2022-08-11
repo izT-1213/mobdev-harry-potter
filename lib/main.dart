@@ -21,8 +21,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Harry Potter Almanac',
       theme: ThemeData(
-        canvasColor: Colors.yellow,
         primarySwatch: Colors.brown,
+        scrollbarTheme: ScrollbarThemeData(
+          thumbColor: MaterialStateProperty.all(Colors.brown[900])
+        )
       ),
       home: const MyHomePage(),
     );
