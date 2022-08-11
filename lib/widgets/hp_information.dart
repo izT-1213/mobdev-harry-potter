@@ -8,6 +8,7 @@ class HPInformation extends StatelessWidget {
   HPInformation({required this.hpCharacters, Key? key}) : super(key: key);
 
   final List<HpCharacters> hpCharacters;
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
