@@ -2,20 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:harry_potter_mobdev_hackathon/fonts/akaya_teliviga.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/homepage.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/staff.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/students.dart';
 
-
+// This class is for bottom navigation widget in all pages - just call bottomNavigationBar: Navbar() under Scaffold
 class Navbar extends StatelessWidget {
-  Navbar({required this.isHome, required this.isAboutUs, Key? key})
+  Navbar({
+    // By default, all states are false so please set state = true when in corresponding page
+    this.isHome = false,
+    this.isAboutUs = false,
+    this.isStudent = false,
+    this.isStaff = false,
+    Key? key})
       : super(key: key);
 
   bool isHome = false;
   bool isAboutUs = false;
+  bool isStudent = false;
+  bool isStaff = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      color: Colors.blue,
+      color: Colors.brown,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -34,6 +44,40 @@ class Navbar extends StatelessWidget {
             label: const Text(
               "Home",
               style: AkayaTelivigala(color: Colors.white, size: 16)
+            ),
+          ),
+          TextButton.icon(
+            onPressed: isStudent? null: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Student()),
+              );
+            },
+            icon: const Icon(
+              Icons.school,
+              color: Colors.white,
+            ),
+            style: isStudent? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
+            label: const Text(
+                "Students",
+                style: AkayaTelivigala(color: Colors.white, size: 16)
+            ),
+          ),
+          TextButton.icon(
+            onPressed: isStaff? null: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Staff()),
+              );
+            },
+            icon: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            style: isStaff? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
+            label: const Text(
+                "Staff",
+                style: AkayaTelivigala(color: Colors.white, size: 16)
             ),
           ),
           TextButton.icon(

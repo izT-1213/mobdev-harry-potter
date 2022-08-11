@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage>
     return Scaffold(
       appBar: AppBar(
 
-          title: Text(
+          title: const Text(
         'Harry Potter Almanac',
         style: TextStyle(
             color: Colors.black,
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage>
               width: 20.0,
               height: 30.0,
             ),
-            Text(
+            const Text(
               'Welcome to Harry Potter Wizardly App',
               style: TextStyle(
                   color: Colors.black,
@@ -80,20 +80,7 @@ class _MyHomePageState extends State<MyHomePage>
               child: Column(
                 children: [
                   Text(
-                    'Harry Potter, is a series of seven fantasy novels written by British author J.K. Rowling. These series are basically about a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasly, all of whom are students at a wizard school, Hogwarts School of Witchcraft & Wizardy.',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontFamily: 'AkayaTelivigala'),
-                  ),
-
-                  const SizedBox(
-                    width: 20.0,
-                    height: 20.0,
-                  ),
-
-                  Text(
-                    'Hogwarts School of Witchcraft & Wizardy is divided into four houses, Gryffindor House, Hufflepuff House, Ravenclaw House, & Slytherin House. Each house has their own system, lives, & learning system that all the students adapt to. Explore each house to know better of the students below.',
+                    'Get to know to your favourite Harry Potter characters here in our app. See below & choose your favourite Harry Potter houses! ',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
@@ -112,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage>
                             constraints: const BoxConstraints(maxWidth: 350),
                             child: FadeTransition(
                               opacity: _animationController,
-                              child: Image(
+                              child: const Image(
                                   image: AssetImage(
                                       'assets/images/gryffindor.png')),
                             )),
@@ -281,7 +268,6 @@ class _MyHomePageState extends State<MyHomePage>
       ),
       bottomNavigationBar: Navbar(
         isHome: true,
-        isAboutUs: false,
       ),
     );
   }

@@ -19,7 +19,7 @@ class AboutUs extends StatelessWidget {
         title: const Text(
           "About Us",
           style: AkayaTelivigala(
-              color: Colors.white, size: 25, fontWeight: FontWeight.bold),
+              color: Colors.black, size: 25, fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
@@ -156,7 +156,6 @@ class AboutUs extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Navbar(
-        isHome: false,
         isAboutUs: true,
       ),
     );
