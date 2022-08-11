@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:harry_potter_mobdev_hackathon/fonts/akaya_teliviga.dart';
-import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/bottom_navbar.dart';
-import 'package:harry_potter_mobdev_hackathon/pages/hp_details.dart';
-import 'package:harry_potter_mobdev_hackathon/pages/hphouse_details.dart';
 
 class MySummary extends StatefulWidget {
   const MySummary({Key? key}) : super(key: key);
@@ -45,14 +42,13 @@ class _MySummaryState extends State<MySummary>
 
           title: const Text(
             'Harry Potter Almanac',
-            style: TextStyle(
+            style: AkayaTelivigala(
                 color: Colors.white,
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'AkayaTelivigala'),
+                size: 25.0,
+                fontWeight: FontWeight.bold,),
           )),
       body: Container(
-        constraints: BoxConstraints.expand(),
+        constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/background.jpeg"),
@@ -64,12 +60,11 @@ class _MySummaryState extends State<MySummary>
               width: 20.0,
               height: 30.0,
             ),
-            const Text(
+            Text(
               'Gryffindor House',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 23.0,
-                  fontFamily: 'AkayaTelivigala'),
+              style: AkayaTelivigala(
+                  color: Colors.brown.shade900,
+                  size: 23.0,),
             ),
 
             const SizedBox(
@@ -77,7 +72,7 @@ class _MySummaryState extends State<MySummary>
               height: 20.0,
             ),
 
-            SizedBox(
+            const SizedBox(
               child: Image(image: AssetImage('assets/images/gryff_owner.png')
               ),
             ),
@@ -87,15 +82,14 @@ class _MySummaryState extends State<MySummary>
               height: 5.0,
             ),
             Container(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
                   Text(
                     'Godric Gryffindor(founder)',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontFamily: 'AkayaTelivigala'),
+                    style: AkayaTelivigala(
+                        color: Colors.brown.shade900,
+                        size: 18.0,),
                   ),
 
                   const SizedBox(
@@ -105,10 +99,9 @@ class _MySummaryState extends State<MySummary>
 
                   Text(
                         'House Summary',
-                        style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontFamily: 'AkayaTelivigala'),
+                        style: AkayaTelivigala(
+                        color: Colors.brown.shade900,
+                        size: 18.0),
                   ),
 
                   const SizedBox(
@@ -118,15 +111,10 @@ class _MySummaryState extends State<MySummary>
 
                   Text(
                     'Gryffindor valued bravery, daring, nerve, and chivalry. Its emblematic animal was the lion, and its colours were scarlet and gold. Minerva McGonagall was the most recent. Head of Gryffindor. Nicholas de Mimsy-Porpington, also known as "Nearly Headless Nick", was the House Ghost. The founder of the House was, Godric Gryffindor. Gryffindor corresponded to the element of Fire. The common room was located in one of the highest towers at Hogwarts, the entrance was situated on the seventh floor in the east wing of the castle and was guarded by a portrait of The Fat Lady. She permitted entrance if given the correct password, which was changed numerous times throughout the school year. Famous Gryffindors included albus Dumbledore, Harry Potter, and Minerva McGonagall.',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontFamily: 'AkayaTelivigala'),
+                    style: AkayaTelivigala(
+                        color: Colors.brown.shade900,
+                        size: 18.0,),
                   ),
-
-
-
-
                 ],
               ),
             )

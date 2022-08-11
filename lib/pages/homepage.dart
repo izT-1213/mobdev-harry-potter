@@ -37,6 +37,10 @@ class _MyHomePageState extends State<MyHomePage>
     _animationController.dispose();
   }
 
+  void navigateToHouse(BuildContext context, String house){
+    Navigator.pushNamed(context, '/hphouse', arguments: house);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,10 +153,7 @@ class _MyHomePageState extends State<MyHomePage>
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const HPHouseDetails(house: 'gryffindor'))
-                                  );
+                                  navigateToHouse(context, 'gryffindor');
                                 },
                                 style: ElevatedButton.styleFrom(
                                     primary: Colors.brown,
@@ -162,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage>
                                 child: Row(
                                   children: const [
                                     SizedBox(
-                                      width: 122,
+                                      width: 123,
                                       child:Text('Visit Gryffindor',
                                         style: AkayaTelivigala(
                                         color: Colors.white,
@@ -188,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage>
                                 child: Row(
                                   children: const [
                                     SizedBox(
-                                      width: 122,
+                                      width: 123,
                                       child: Text('More of Gryffindor',
                                       textAlign: TextAlign.center,
                                       style: AkayaTelivigala(
@@ -229,19 +230,24 @@ class _MyHomePageState extends State<MyHomePage>
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const HPHouseDetails(house: 'slytherin'))
-                                  );
+                                  navigateToHouse(context, 'slytherin');
                                 },
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.brown,
-                                ),
-                                child: const Text('Visit Slytherin',
-                                  style: AkayaTelivigala(
-                                    color: Colors.white,
-                                    size: 16
-                                  ),),
+                                  elevation: 3,
+                                  minimumSize: const Size(18,35)),
+                                child: Row(
+                                  children: const [
+                                    SizedBox(
+                                      width: 123,
+                                        child:Text('Visit Slytherin',
+                                          style: AkayaTelivigala(
+                                            color: Colors.white,
+                                            size: 16
+                                        ))),
+                                    SizedBox(width: 5),
+                                    Icon(Icons.double_arrow, size: 16),
+                                  ]),
                               ),
                               ElevatedButton(
                                 onPressed: () {
@@ -251,13 +257,22 @@ class _MyHomePageState extends State<MyHomePage>
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.brown,
+                                    primary: Colors.brown,
+                                    elevation: 3,
+                                    minimumSize: const Size(18,35)),
+                                child: Row(
+                                  children: const[
+                                    SizedBox(
+                                      width: 123,
+                                        child: Text('More of Slytherin',
+                                          style: AkayaTelivigala(
+                                          color: Colors.white,
+                                          size: 16
+                                  ))),
+                                    SizedBox(width: 5),
+                                    Icon(Icons.double_arrow, size: 16),
+                                  ]
                                 ),
-                                child: const Text('More of Slytherin',
-                                  style: AkayaTelivigala(
-                                    color: Colors.white,
-                                    size: 16
-                                  ),),
                               ),
                             ],
                           ),
@@ -288,19 +303,25 @@ class _MyHomePageState extends State<MyHomePage>
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const HPHouseDetails(house: 'hufflepuff'))
-                                  );
+                                  navigateToHouse(context, 'hufflepuff');
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.brown,
+                                    primary: Colors.brown,
+                                    elevation: 3,
+                                    minimumSize: const Size(18,35)),
+                                child: Row(
+                                    children: const[
+                                      SizedBox(
+                                          width: 123,
+                                          child: Text('Visit Hufflepuff',
+                                              style: AkayaTelivigala(
+                                                  color: Colors.white,
+                                                  size: 16
+                                              ))),
+                                      SizedBox(width: 5),
+                                      Icon(Icons.double_arrow, size: 16),
+                                    ]
                                 ),
-                                child: const Text('Visit Hufflepuff',
-                                  style: AkayaTelivigala(
-                                    color: Colors.white,
-                                    size: 16
-                                  ),),
                               ),
 
                               ElevatedButton(
@@ -311,13 +332,22 @@ class _MyHomePageState extends State<MyHomePage>
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.brown,
-                                ),
-                                child: const Text('More of Hufflepuff',
-                                  style: AkayaTelivigala(
-                                    color: Colors.white,
-                                    size: 16,
-                                  ),),
+                                    primary: Colors.brown,
+                                    elevation: 3,
+                                    minimumSize: const Size(18,35)),
+                                  child: Row(
+                                      children: const[
+                                        SizedBox(
+                                            width: 123,
+                                            child: Text('More of Hufflepuff',
+                                                style: AkayaTelivigala(
+                                                    color: Colors.white,
+                                                    size: 16
+                                                ))),
+                                        SizedBox(width: 5),
+                                        Icon(Icons.double_arrow, size: 16),
+                                      ]
+                                  ),
                               ),
                             ],
                           ),
@@ -349,19 +379,25 @@ class _MyHomePageState extends State<MyHomePage>
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => const HPHouseDetails(house: 'ravenclaw'))
-                                  );
+                                  navigateToHouse(context, 'ravenclaw');
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.brown,
+                                    primary: Colors.brown,
+                                    elevation: 3,
+                                    minimumSize: const Size(18,35)),
+                                child: Row(
+                                    children: const[
+                                      SizedBox(
+                                          width: 123,
+                                          child: Text('Visit Ravenclaw',
+                                              style: AkayaTelivigala(
+                                                  color: Colors.white,
+                                                  size: 16
+                                              ))),
+                                      SizedBox(width: 5),
+                                      Icon(Icons.double_arrow, size: 16),
+                                    ]
                                 ),
-                                child: const Text('Visit Ravenclaw',
-                                  style: AkayaTelivigala(
-                                    color: Colors.white,
-                                    size: 16
-                                  ),),
                               ),
 
                               ElevatedButton(
@@ -372,13 +408,22 @@ class _MyHomePageState extends State<MyHomePage>
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.brown,
-                                ),
-                                child: const Text('More of Ravenclaw',
-                                  style: AkayaTelivigala(
-                                    color: Colors.white,
-                                    size: 16
-                                  ),),
+                                    primary: Colors.brown,
+                                    elevation: 3,
+                                    minimumSize: const Size(18,35)),
+                                  child: Row(
+                                      children: const[
+                                        SizedBox(
+                                            width: 123,
+                                            child: Text('More of Ravenclaw',
+                                                style: AkayaTelivigala(
+                                                    color: Colors.white,
+                                                    size: 16
+                                                ))),
+                                        SizedBox(width: 5),
+                                        Icon(Icons.double_arrow, size: 16),
+                                      ]
+                                  ),
                               ),
                             ],
                           ),
