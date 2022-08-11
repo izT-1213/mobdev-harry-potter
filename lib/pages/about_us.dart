@@ -25,52 +25,44 @@ class _AboutUsState extends State<AboutUs> {
   static const String p4 = "The trio are:";
 
   static Column p5 = Column(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset(
-              'assets/images/rn_tea.jpeg',
-              width: 100.0,
-              height: 100.0,
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/rn_tea.jpeg'),
+              radius: 50,
             ),
           ),
           Column(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               Text(
                 'Nurul Izzati',
                 style: AkayaTelivigala(
                   color: Colors.red,
-                  size: 28,
+                  size: 36,
                 ),
               ),
-              Text(
-                'Our favourite streamerrrrrrrrr xD',
-                style: AkayaTelivigala(
-                  color: Colors.black,
-                  size: 18,
-                ),
-              ),
+              Text('Team Lead',
+                  textAlign: TextAlign.justify,
+                  style: AkayaTelivigala(
+                    color: Colors.black,
+                    size: 24,
+                  )),
             ],
           ),
         ],
       ),
-      const SizedBox(
-        height: 15,
-      ),
       Row(
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Image.asset(
-              'assets/images/jazli.jpeg',
-              width: 100.0,
-              height: 100.0,
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/jazli.jpeg'),
+              radius: 50,
             ),
           ),
           Column(
@@ -84,7 +76,7 @@ class _AboutUsState extends State<AboutUs> {
                   size: 36,
                 ),
               ),
-              Text('Yes, this is his real face.',
+              Text('Code Logistics',
                   style: AkayaTelivigala(
                     color: Colors.black,
                     size: 24,
@@ -93,17 +85,13 @@ class _AboutUsState extends State<AboutUs> {
           ),
         ],
       ),
-      const SizedBox(
-        height: 15,
-      ),
       Row(
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Image.asset(
-              'assets/images/waifu.jpeg',
-              width: 100.0,
-              height: 100.0,
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/waifu.jpeg'),
+              radius: 50,
             ),
           ),
           Column(
@@ -114,13 +102,13 @@ class _AboutUsState extends State<AboutUs> {
                 'Isaiah Tan',
                 style: AkayaTelivigala(
                   color: Colors.red,
-                  size: 28,
+                  size: 36,
                 ),
               ),
-              Text("He's kinda cringe, ngl.",
+              Text("Freeloader",
                   style: AkayaTelivigala(
                     color: Colors.black,
-                    size: 18,
+                    size: 24,
                   )),
             ],
           ),
@@ -131,8 +119,6 @@ class _AboutUsState extends State<AboutUs> {
 
   imageBox(dynamic entry) {
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -141,9 +127,7 @@ class _AboutUsState extends State<AboutUs> {
             height: MediaQuery.of(context).size.height,
             child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Center(
-                    child: entry["context"])
-            ),
+                child: Center(child: entry["context"])),
           ),
         ],
       ),
@@ -152,9 +136,14 @@ class _AboutUsState extends State<AboutUs> {
 
   List allSlides = List.from(
     [p1, p2, p3, p4, p5].map(
-          (s) => {'widget': Widget, 'selected': false, 'context': s is Widget? s : Text(
-          s.toString(),
-          style: const AkayaTelivigala(color: Colors.black, size: 32))},
+      (s) => {
+        'widget': Widget,
+        'selected': false,
+        'context': s is Widget
+            ? s
+            : Text(s.toString(),
+                style: const AkayaTelivigala(color: Colors.black, size: 32))
+      },
     ),
   );
 
@@ -193,7 +182,7 @@ class _AboutUsState extends State<AboutUs> {
         title: const Text(
           "About Us",
           style: AkayaTelivigala(
-              color: Colors.black, size: 25, fontWeight: FontWeight.bold),
+              color: Colors.white, size: 25, fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
