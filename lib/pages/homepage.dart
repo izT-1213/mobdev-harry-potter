@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage>
           title: const Text(
         'Harry Potter Almanac',
         style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 25.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'AkayaTelivigala'),
@@ -80,7 +80,20 @@ class _MyHomePageState extends State<MyHomePage>
               child: Column(
                 children: [
                   Text(
-                    'Get to know to your favourite Harry Potter characters here in our app. See below & choose your favourite Harry Potter houses! ',
+                    'Harry Potter, is a series of seven fantasy novels written by J.K. Rowling. These series are basically about the lives of a young wizard, Harry Potter and his friends, Hermione Granger & Ron Weasley, all of whom are the students of Hogwarts School of Witchcraft & Wizardry.',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18.0,
+                        fontFamily: 'AkayaTelivigala'),
+                  ),
+
+                  const SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                  ),
+
+                  Text(
+                    'Meanwhile, Hogwarts School of Witchcraft & Wizardry is divided into four main houses. The houses are Gryffindor House, Slytherin House, Hufflepuff House, & Ravenclaw House. Each house has their own students, study system & community. Explore each house below.',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
@@ -91,19 +104,26 @@ class _MyHomePageState extends State<MyHomePage>
                     width: 60.0,
                     height: 60.0,
                   ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   Wrap(children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 350),
-                            child: FadeTransition(
-                              opacity: _animationController,
-                              child: const Image(
-                                  image: AssetImage(
-                                      'assets/images/gryffindor.png')),
-                            )),
-                      ],
                     ),
                     const SizedBox(
                       width: 20.0,
@@ -112,20 +132,54 @@ class _MyHomePageState extends State<MyHomePage>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor'))
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.brown,
+                        Expanded(flex:1,
+                          child: ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 1000),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/Gryffindor-black.png')),
+                              )),
+                        ),
+
+                        Expanded(flex: 1,
+                          child: Column(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('Visit Gryffindor',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('More of Gryffindor',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                            ],
                           ),
-                          child: const Text('Visit Gryffindor',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),),
                         ),
                       ],
                     ),
@@ -139,37 +193,54 @@ class _MyHomePageState extends State<MyHomePage>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 200),
-                            child: FadeTransition(
-                              opacity: _animationController,
-                              child: const Image(
-                                  image: AssetImage(
-                                      'assets/images/slytherin.png')),
-                            )),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 20.0,
-                      height: 20.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'slytherin'))
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.brown,
+                        Expanded(flex:1,
+                          child: ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 1000),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/Slytherin-black.png')),
+                              )),
+                        ),
+
+                        Expanded(flex: 1,
+                          child: Column(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'slytherin'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('Visit Slytherin',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'slytherin'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('More of Slytherin',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                            ],
                           ),
-                          child: const Text('Visit Slytherin',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),),
                         ),
                       ],
                     ),
@@ -182,37 +253,54 @@ class _MyHomePageState extends State<MyHomePage>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 255),
-                            child: FadeTransition(
-                              opacity: _animationController,
-                              child: const Image(
-                                  image: AssetImage(
-                                      'assets/images/hufflepuff.png')),
-                            )),
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 20.0,
-                      height: 20.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'hufflepuff'))
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.brown,
+                        Expanded(flex:1,
+                          child: ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 1000),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/Hufflepuff-black.png')),
+                              )),
+                        ),
+
+                        Expanded(flex: 1,
+                          child: Column(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'hufflepuff'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('Visit Hufflepuff',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'hufflepuff'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('More of Hufflepuff',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                            ],
                           ),
-                          child: const Text('Visit Hufflepuff',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),),
                         ),
                       ],
                     ),
@@ -225,37 +313,56 @@ class _MyHomePageState extends State<MyHomePage>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 255),
-                          // child: FadeTransition(opacity: _animationController,
-                          child: const Image(
-                              image: AssetImage('assets/images/ravenclaw.png')),
-                          // )
+                        Expanded(flex:1,
+                          child: ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 1000),
+                              child: FadeTransition(
+                                opacity: _animationController,
+                                child: const Image(
+                                    image: AssetImage(
+                                        'assets/images/Ravenclaw-black.png')),
+                              )),
+                        ),
+
+                        Expanded(flex: 1,
+                          child: Column(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'ravenclaw'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('Visit Ravenclaw',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'ravenclaw'))
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.brown,
+                                ),
+                                child: const Text('More of Ravenclaw',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                              ),
+
+                            ],
+                          ),
                         ),
                       ],
-                    ),
-                    const SizedBox(
-                      width: 20.0,
-                      height: 20.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'ravenclaw'))
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.brown,
-                          ),
-                          child: const Text('Visit Ravenclaw',
-                            style: TextStyle(
-                              color: Colors.white,
-                        )))
-                          ],
                     ),
                   ]),
 
