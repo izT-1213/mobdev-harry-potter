@@ -41,8 +41,8 @@ class _AboutUsState extends State<AboutUs> {
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Nurul Izzati',
                 style: AkayaTelivigala(
                   color: Colors.red,
@@ -50,9 +50,9 @@ class _AboutUsState extends State<AboutUs> {
                 ),
               ),
               Text(
-                'Our favourite streamerrrrrrrrr xD',
+                'Our favourite streamerrrr xD',
                 style: AkayaTelivigala(
-                  color: Colors.black,
+                  color: Colors.brown.shade900,
                   size: 18,
                 ),
               ),
@@ -66,7 +66,7 @@ class _AboutUsState extends State<AboutUs> {
       Row(
         children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Image.asset(
               'assets/images/jazli.jpeg',
               width: 100.0,
@@ -76,8 +76,8 @@ class _AboutUsState extends State<AboutUs> {
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Jazli',
                 style: AkayaTelivigala(
                   color: Colors.red,
@@ -86,7 +86,7 @@ class _AboutUsState extends State<AboutUs> {
               ),
               Text('Yes, this is his real face.',
                   style: AkayaTelivigala(
-                    color: Colors.black,
+                    color: Colors.brown.shade900,
                     size: 24,
                   )),
             ],
@@ -99,7 +99,7 @@ class _AboutUsState extends State<AboutUs> {
       Row(
         children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Image.asset(
               'assets/images/waifu.jpeg',
               width: 100.0,
@@ -109,8 +109,8 @@ class _AboutUsState extends State<AboutUs> {
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Isaiah Tan',
                 style: AkayaTelivigala(
                   color: Colors.red,
@@ -119,7 +119,7 @@ class _AboutUsState extends State<AboutUs> {
               ),
               Text("He's kinda cringe, ngl.",
                   style: AkayaTelivigala(
-                    color: Colors.black,
+                    color: Colors.brown.shade900,
                     size: 18,
                   )),
             ],
@@ -154,7 +154,7 @@ class _AboutUsState extends State<AboutUs> {
     [p1, p2, p3, p4, p5].map(
           (s) => {'widget': Widget, 'selected': false, 'context': s is Widget? s : Text(
           s.toString(),
-          style: const AkayaTelivigala(color: Colors.black, size: 32))},
+          style: AkayaTelivigala(color: Colors.brown.shade900, size: 32))},
     ),
   );
 
@@ -193,7 +193,7 @@ class _AboutUsState extends State<AboutUs> {
         title: const Text(
           "About Us",
           style: AkayaTelivigala(
-              color: Colors.black, size: 25, fontWeight: FontWeight.bold),
+              color: Colors.white, size: 25, fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
