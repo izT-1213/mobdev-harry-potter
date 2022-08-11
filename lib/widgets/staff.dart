@@ -48,9 +48,6 @@ class Staff extends StatelessWidget {
                             alternateNames: hpCharacters[i].alternateNames,
                             species: hpCharacters[i].species,
                             house: hpCharacters[i].house,
-                            wizard: hpCharacters[i].wizard,
-                            hogwartsStudent: hpCharacters[i].hogwartsStudent,
-                            hogwartsStaff: hpCharacters[i].hogwartsStaff,
                             image: hpCharacters[i].image,
                             description: hpCharacters[i].description
                         )));

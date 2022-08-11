@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage>
           title: const Text(
         'Harry Potter Almanac',
         style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 25.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'AkayaTelivigala'),
