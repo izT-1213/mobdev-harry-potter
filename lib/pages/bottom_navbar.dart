@@ -40,7 +40,7 @@ class Navbar extends StatelessWidget {
               Icons.home,
               color: Colors.white,
             ),
-            style: isHome? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
+            style: isHome? TextButton.styleFrom(backgroundColor: Colors.yellow.shade800) : null,
             label: const Text(
               "Home",
               style: AkayaTelivigala(color: Colors.white, size: 16)
@@ -57,7 +57,7 @@ class Navbar extends StatelessWidget {
               Icons.school,
               color: Colors.white,
             ),
-            style: isStudent? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
+            style: isStudent? TextButton.styleFrom(backgroundColor: Colors.yellow.shade800) : null,
             label: const Text(
                 "Students",
                 style: AkayaTelivigala(color: Colors.white, size: 16)
@@ -74,7 +74,7 @@ class Navbar extends StatelessWidget {
               Icons.person,
               color: Colors.white,
             ),
-            style: isStaff? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
+            style: isStaff? TextButton.styleFrom(backgroundColor: Colors.yellow.shade800) : null,
             label: const Text(
                 "Staff",
                 style: AkayaTelivigala(color: Colors.white, size: 16)
@@ -88,7 +88,7 @@ class Navbar extends StatelessWidget {
               );
             },
             icon: const Icon(Icons.info_outline, color: Colors.white),
-            style: isAboutUs? TextButton.styleFrom(backgroundColor: Colors.amber) : null,
+            style: isAboutUs? TextButton.styleFrom(backgroundColor: Colors.yellow.shade800) : null,
             label: const Text(
               "About Us",
               style: AkayaTelivigala(color: Colors.white, size: 16),
