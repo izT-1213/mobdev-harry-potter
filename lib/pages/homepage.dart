@@ -80,12 +80,26 @@ class _MyHomePageState extends State<MyHomePage>
               child: Column(
                 children: [
                   Text(
-                    'Get to know to your favourite Harry Potter characters here in our app. See below & choose your favourite Harry Potter houses! ',
+                    'Harry Potter, is a series of seven fantasy novels written by British author J.K. Rowling. These series are basically about a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasly, all of whom are students at a wizard school, Hogwarts School of Witchcraft & Wizardy.',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
                         fontFamily: 'AkayaTelivigala'),
                   ),
+
+                  const SizedBox(
+                    width: 20.0,
+                    height: 20.0,
+                  ),
+
+                  Text(
+                    'Hogwarts School of Witchcraft & Wizardy is divided into four houses, Gryffindor House, Hufflepuff House, Ravenclaw House, & Slytherin House. Each house has their own system, lives, & learning system that all the students adapt to. Explore each house to know better of the students below.',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18.0,
+                        fontFamily: 'AkayaTelivigala'),
+                  ),
+
                   const SizedBox(
                     width: 60.0,
                     height: 60.0,
@@ -257,6 +271,8 @@ class _MyHomePageState extends State<MyHomePage>
                           ],
                     ),
                   ]),
+
+
                 ],
               ),
             )
