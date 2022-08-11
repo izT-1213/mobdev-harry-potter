@@ -15,7 +15,13 @@ class HPDetails extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text("HP Information Test")),
-      body: Center(
+        body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/background.jpeg"),
+                fit: BoxFit.cover),
+          ),
         child: BlocBuilder<HarryPotterCubit,HarryPotterState>(
           bloc: cubit,
           builder: (context, state){

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../fonts/akaya_teliviga.dart';
-import 'bottom_navbar.dart';
+import '../pages/bottom_navbar.dart';
 
 
 class Student extends StatelessWidget {
@@ -10,13 +10,7 @@ class Student extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Student",
-          style: AkayaTelivigala(
-              color: Colors.black, size: 25, fontWeight: FontWeight.bold),
-        ),
-      ),
+
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: const BoxDecoration(
@@ -30,9 +24,7 @@ class Student extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Navbar(
-        isStudent: true,
-      ),
+
     );
   }
 }
