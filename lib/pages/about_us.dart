@@ -3,17 +3,191 @@ import 'package:flutter/material.dart';
 import '../fonts/akaya_teliviga.dart';
 import 'bottom_navbar.dart';
 
-class AboutUs extends StatelessWidget {
+class AboutUs extends StatefulWidget {
   const AboutUs({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    const String story =
-        "T'was a cold and rainy night when three delinquents are lost in the woods, having dared defy their masters and brave the Forest.  \n\n"
-        "They were taking shelter beneath a tree when a howl suddenly rang out behind them. The trio turned quickly to glimpse a pack of werewolves nearby and a masked horseman riding close beside. An order was given, and the wolves gave chase. Terrified, they ran aimlessly away from their pursuers, fear and adrenaline both willing them to hasten their steps. Still, alas, they could not outrun the inevitable.   \n\n"
-        "The attackers encircled the helpless trio and presented them as captives before their master, Lord Voldemort, to whom he saw befitting that the three served the rest of their miserable lives developing and maintaining a mobile app to promote and magnify the greatness of Hogwarts to the rest of the world. \n\n"
-        "And the trio are:";
+  State<AboutUs> createState() => _AboutUsState();
+}
 
+class _AboutUsState extends State<AboutUs> {
+  late ScrollController _scrollController;
+  var selectedSlide;
+  static const String p1 =
+      "T'was a cold and rainy night when three delinquents are lost in the woods, having dared defy their masters and brave the Forest.  \n\n";
+
+  static const String p2 =
+      "They were taking shelter beneath a tree when a howl suddenly rang out behind them. The trio turned quickly to glimpse a pack of werewolves nearby and a masked horseman riding close beside. An order was given, and the wolves gave chase. Terrified, they ran aimlessly away from their pursuers, fear and adrenaline both willing them to hasten their steps. Still, alas, they could not outrun the inevitable.   \n\n";
+
+  static const String p3 =
+      "The attackers encircled the helpless trio and presented them as captives before their master, Lord Voldemort, to whom he saw befitting that the three served the rest of their miserable lives developing and maintaining a mobile app to promote and magnify the greatness of Hogwarts to the rest of the world. \n\n";
+
+  static const String p4 = "The trio are:";
+
+  static Column p5 = Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              'assets/images/rn_tea.jpeg',
+              width: 100.0,
+              height: 100.0,
+            ),
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Nurul Izzati',
+                style: AkayaTelivigala(
+                  color: Colors.red,
+                  size: 28,
+                ),
+              ),
+              Text(
+                'Our favourite streamerrrrrrrrr xD',
+                style: AkayaTelivigala(
+                  color: Colors.black,
+                  size: 18,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+      const SizedBox(
+        height: 15,
+      ),
+      Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Image.asset(
+              'assets/images/jazli.jpeg',
+              width: 100.0,
+              height: 100.0,
+            ),
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Jazli',
+                style: AkayaTelivigala(
+                  color: Colors.red,
+                  size: 36,
+                ),
+              ),
+              Text('Yes, this is his real face.',
+                  style: AkayaTelivigala(
+                    color: Colors.black,
+                    size: 24,
+                  )),
+            ],
+          ),
+        ],
+      ),
+      const SizedBox(
+        height: 15,
+      ),
+      Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Image.asset(
+              'assets/images/waifu.jpeg',
+              width: 100.0,
+              height: 100.0,
+            ),
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Isaiah Tan',
+                style: AkayaTelivigala(
+                  color: Colors.red,
+                  size: 28,
+                ),
+              ),
+              Text("He's kinda cringe, ngl.",
+                  style: AkayaTelivigala(
+                    color: Colors.black,
+                    size: 18,
+                  )),
+            ],
+          ),
+        ],
+      ),
+    ],
+  );
+
+  imageBox(dynamic entry) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Center(
+                    child: entry["context"])
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  List allSlides = List.from(
+    [p1, p2, p3, p4, p5].map(
+          (s) => {'widget': Widget, 'selected': false, 'context': s is Widget? s : Text(
+          s.toString(),
+          style: const AkayaTelivigala(color: Colors.black, size: 32))},
+    ),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(changeSelector);
+    setState(() {
+      selectedSlide = allSlides[0];
+      selectedSlide['selected'] = true;
+    });
+  }
+
+  changeSelector() {
+    var maxScrollVal = _scrollController.position.maxScrollExtent;
+
+    var divisor = (maxScrollVal / allSlides.length) + 20;
+
+    var scrollValue = _scrollController.offset.round();
+    var slideValue = (scrollValue / divisor).round();
+
+    // var currentSlide = allSlides.indexWhere((slide) => slide['selected']);
+
+    setState(() {
+      // allSlides[currentSlide]['selected'] = false;
+      selectedSlide = allSlides[slideValue];
+      selectedSlide['selected'] = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -29,134 +203,40 @@ class AboutUs extends StatelessWidget {
               image: AssetImage("assets/images/background.jpeg"),
               fit: BoxFit.cover),
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                story,
-                style: AkayaTelivigala(
-                  color: Colors.black,
-                  size: 23,
-                ),
-                textAlign: TextAlign.justify,
+        child: Row(
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: ListView(
+                controller: _scrollController,
+                children: allSlides.map((element) {
+                  return getCards(element);
+                }).toList(),
               ),
-              const Divider(
-                color: Colors.black,
-                height: 30,
-                thickness: 3,
-              ),
-              Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          'assets/images/rn_tea.jpeg',
-                          width: 100.0,
-                          height: 100.0,
-                        ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Nurul Izzati',
-                            style: AkayaTelivigala(
-                              color: Colors.red,
-                              size: 28,
-                            ),
-                          ),
-                          Text(
-                            'Our favourite streamerrrrrrrrr xD',
-                            style: AkayaTelivigala(
-                              color: Colors.black,
-                              size: 18,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          'assets/images/jazli.jpeg',
-                          width: 100.0,
-                          height: 100.0,
-                        ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Jazli',
-                            style: AkayaTelivigala(
-                              color: Colors.red,
-                              size: 28,
-                            ),
-                          ),
-                          Text('Yes, this is his real face.',
-                              style: AkayaTelivigala(
-                                color: Colors.black,
-                                size: 18,
-                              )),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          'assets/images/waifu.jpeg',
-                          width: 100.0,
-                          height: 100.0,
-                        ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Isaiah Tan',
-                            style: AkayaTelivigala(
-                              color: Colors.red,
-                              size: 28,
-                            ),
-                          ),
-                          Text("He's kinda cringe, ngl.",
-                              style: AkayaTelivigala(
-                                color: Colors.black,
-                                size: 18,
-                              )),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
       bottomNavigationBar: Navbar(
         isAboutUs: true,
+      ),
+    );
+  }
+
+  Widget getCards(slide) {
+    return Padding(
+      padding: EdgeInsets.all(0),
+      child: AnimatedCrossFade(
+        firstChild: imageBox(slide),
+        duration: Duration(seconds: 1),
+        secondChild: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          color: Colors.transparent,
+        ),
+        crossFadeState: slide['selected']
+            ? CrossFadeState.showFirst
+            : CrossFadeState.showSecond,
       ),
     );
   }
