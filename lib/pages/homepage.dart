@@ -4,6 +4,7 @@ import 'package:harry_potter_mobdev_hackathon/pages/about_us.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/bottom_navbar.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/hp_details.dart';
 import 'package:harry_potter_mobdev_hackathon/pages/hphouse_details.dart';
+import 'package:harry_potter_mobdev_hackathon/pages/house_summary.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -71,6 +72,17 @@ class _MyHomePageState extends State<MyHomePage>
                   fontSize: 23.0,
                   fontFamily: 'AkayaTelivigala'),
             ),
+
+            const SizedBox(
+              width: 20.0,
+              height: 20.0,
+            ),
+
+            SizedBox(
+              child: Image(image: AssetImage('assets/images/harry_potter.png')
+            ),
+            ),
+
             const SizedBox(
               width: 20.0,
               height: 20.0,
@@ -166,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage>
                                 onPressed: () {
                                   Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => HPHouseDetails(house: 'gryffindor'))
+                                      MaterialPageRoute(builder: (context) => MySummary())
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
