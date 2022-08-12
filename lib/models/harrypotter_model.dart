@@ -23,7 +23,7 @@ class HpCharacters {
   final String image;
   final String description;
 
-  factory HpCharacters.fromJson(String str) => HpCharacters.fromMap(json.decode(str));
+  factory HpCharacters.fromJson(str) => HpCharacters.fromMap(json.decode(str));
 
   factory HpCharacters.fromMap(Map<String, dynamic> json) => HpCharacters(
     name: json["name"],
@@ -34,6 +34,6 @@ class HpCharacters {
     hogwartsStudent: json["hogwartsStudent"],
     hogwartsStaff: json["hogwartsStaff"],
     image: json["image"],
-    description: json["description"] == null ? null : json["description"],
+    description: json["description"]??"",
   );
 }
