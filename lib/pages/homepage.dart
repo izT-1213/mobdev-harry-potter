@@ -133,10 +133,6 @@ class _MyHomePageState extends State<MyHomePage>
                             fit: BoxFit.cover)),
                     padding: const EdgeInsets.all(20),
                     child: Wrap(children: [
-                      const SizedBox(
-                        width: 20.0,
-                        height: 20.0,
-                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -215,10 +211,6 @@ class _MyHomePageState extends State<MyHomePage>
                         ),
                       ],
                     ),
-                      const SizedBox(
-                        width: 20.0,
-                        height: 20.0,
-                      ),
                   ]
                   ),
                   ),
@@ -419,7 +411,7 @@ class _MyHomePageState extends State<MyHomePage>
                                   navigateToHouse(context, 'ravenclaw');
                                 },
                                 style: ElevatedButton.styleFrom(
-                                    primary: const Color(0xffb0E1A40),
+                                    primary: const Color(0xffb222F5B),
                                     elevation: 3,
                                     minimumSize: const Size(18,35)),
                                 child: Row(
@@ -452,7 +444,7 @@ class _MyHomePageState extends State<MyHomePage>
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
-                                    primary: const Color(0xffb0E1A40),
+                                    primary: const Color(0xffb222F5B),
                                     elevation: 3,
                                     minimumSize: const Size(18,35)),
                                   child: Row(
