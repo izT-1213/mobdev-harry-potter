@@ -31,7 +31,7 @@ class _AboutUsState extends State<AboutUs> {
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/rn_tea.jpeg'),
+              backgroundImage: AssetImage('assets/images/izzati.jpg'),
               radius: 50,
             ),
           ),
@@ -90,7 +90,7 @@ class _AboutUsState extends State<AboutUs> {
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/waifu.jpeg'),
+              backgroundImage: AssetImage('assets/images/issaiah.png'),
               radius: 50,
             ),
           ),
@@ -105,7 +105,7 @@ class _AboutUsState extends State<AboutUs> {
                   size: 36,
                 ),
               ),
-              Text("Freeloader",
+              Text("Quality Control",
                   style: AkayaTelivigala(
                     color: Colors.black,
                     size: 24,
